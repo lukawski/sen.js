@@ -1,0 +1,27 @@
+{
+  "name": "sen.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-env": "^1.1.8",
+    "browser-sync": "^2.18.7"
+  },
+  "scripts": {
+    "server": "browser-sync start --server --files \"dist, *.html\"",
+    "babel": "babel src -w -d dist",
+    "dev": "npm run babel & npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukawski/sen.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukawski/sen.js/issues"
+  },
+  "homepage": "https://github.com/lukawski/sen.js#readme"
+}
