@@ -1,15 +1,10 @@
 'use strict';
 
-var doc = document;
-var app = doc.getElementById('app');
-var r = /{(.*?)}/g;
-var lol = {
-  elo: 'chuj',
-  name: 'hehe'
-};
-var arr;
-while (arr = r.exec(app.innerHTML)) {
-  var s = app.innerHTML.replace(arr[0], lol[arr[0].substr(1, arr[0].length - 2)], arr[0]);
-  app.innerHTML = s;
-  console.log(arr[0]);
-}
+var app = new Sen('app', {
+  selector: '<app>',
+  template: '<p><h1>{name}</h1>{lastname}</p>',
+  data: {
+    name: 'lol',
+    lastname: 'lol2'
+  }
+})
