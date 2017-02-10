@@ -25,10 +25,9 @@ var Sen = function () {
       var r = /{(.*?)}/g;
       var arr;
       var t = '';
-      var st = true;
       while (arr = r.exec(this.data.template)) {
         var s = void 0;
-        if (t.length > 0) s = t.replace(arr[0], this.data.data[arr[0].substr(1, arr[0].length - 2)], arr[0]);else s = this.data.template.replace(arr[0], this.data.data[arr[0].substr(1, arr[0].length - 2)], arr[0]);
+        s = t.length > 0 ? t.replace(arr[0], this.data.data[arr[0].substr(1, arr[0].length - 2)], arr[0]) : this.data.template.replace(arr[0], this.data.data[arr[0].substr(1, arr[0].length - 2)], arr[0]);
         t = s;
       }
       return t;
@@ -39,10 +38,8 @@ var Sen = function () {
       var selector = this.data.selector;
       var app = this.getApp();
       var h = this.processTemplate();
-      console.log(app.innerHTML);
       var s = app.innerHTML.replace(selector, h);
       app.innerHTML = s;
-      console.log(app.innerHTML);
     }
   }]);
 
